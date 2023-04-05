@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--link href="/static/rent_book.css" rel="stylesheet" type="text/css"-->
+
+{#<link rel="stylesheet" href="{{url_for('static',filename= 'rent_book.css')}}">#}
+
+<link rel="stylesheet" href="{{url_for('static',filename= 'css_read_pdf.css')}}"/>
+
+
+
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="logout">Logout</a></li>
+            <li><a href="rent_book">Rent Book</a></li>
+            <li><a href="buy_from_user"  class="current" >Buy Book</a></li>
+            <li><a href="buy_book" >Request to buy</a></li>
+            <li><a href="read_pdf">Read Pdf</a></li>
+            <li><a href="user_profile">Profile</a></li>
+            <li><a href="user_posts">Home</a></li>
+
+    	</ul>
+    </div> <!-- end of menu -->
+
+
+    <div id="templatemo_content">
+
+            <div class="cleaner_with_height">&nbsp;</div>
+
+
+        <div id="templatemo_content_left">
+
+
+            <form action="" method="post" enctype="multipart/form-data">
+
+
+            <div class="topnav input">
+                  <input type="text" placeholder="Search by book name" name="search_book">
+
+            </div>
+
+            <br/>
+            <br/>
+
+            <button type="submit" name="book_search_submit" align="right">Submit</button>
+
+            <br/>
+            <br/>
+
+
+        	<div class="templatemo_content_left_section">
+            	<h1>Categories</h1>
+
+                <ul>
+                    <li><a href="buy_book_category?cat=Horror">Horror</a></li>
+                    <li><a href="buy_book_category?cat=Mystery">Mystery</a></li>
+                    <li><a href="buy_book_category?cat=Novel">Novel</a></li>
+                    <li><a href="buy_book_category?cat=Short stories">Short stories</a></li>
+                    <li><a href="buy_book_category?cat=Fictions">Fictions</a></li>
+                    <li><a href="buy_book_category?cat=Science fictions">Science fictions</a></li>
+                    <li><a href="buy_book_category?cat=Cooking">Cooking</a></li>
+                    <li><a href="buy_book_category?cat=Children">Children</a></li>
+                    <li><a href="buy_book_category?cat=Religious">Religious</a></li>
+                    <li><a href="buy_book_category?cat=Fantasy">Fantasy</a></li>
+                    <li><a href="buy_book_category?cat=Documentary">Documentary</a></li>
+                    <li><a href="buy_book_category?cat=Programming">Programming</a></li>
+
+
+
+            	</ul>
+
+
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Search by writter</h1>
+
+                <div class="topnav input">
+                  <input type="text" placeholder="Search by writer" name="search_writer" >
+                </div>
+
+                 <br/>
+                 <br/>
+
+                 <button type="submit" name="writer_search_submit" align="right">Submit</button>
+
+
+
+                <ul>
+                    <li><a href="view_books?cat=mystery">Humyun Ahmed </a></li>
+                    <li><a href="view_books?cat=mystery">Jafor Iqbal</a></li>
+                    <li><a href="#">Sharatchandra Chatterjee</a></li>
+                    <li><a href="#">Anisul Haque</a></li>
+
+                </ul>
+            </div>
+
+            </form>
+
+        </div> <!-- end of content left -->
+
+        <div id="templatemo_content_right">
+
+            <form action="/user" method="get">
+
+
+
+                {% for each in sell_book_info %}
+
+                <div class="templatemo_buy_product_box">
+                   <h1>{{each[0]}}<span>(by {{each[1]}})</span></h1>
+
+
+                   <img src="{{each[2]}}"  height="150px" width="110px"/>
+
+                    <div class="product_info">
+                        <p>{{each[3]}}</p><br/>
+
+                        <a href="buy_book_owners?book={{each[0]}}">Owners</a>
+
+                    </div>
+
+
+                </div>
+                <!--<div class="cleaner_with_height">&nbsp;</div>-->
+
+
+                {% endfor %}
+
+            </form>
+
+
+        </div> <!-- end of content right -->
+
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+	       <a href="subpage.html">Home</a> | <a href="subpage.html">Search</a> | <a href="subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © CSEDU <a href="#"><strong>Your Company Name</strong></a>
+        <!-- Credit: www.templatemo.com -->	</div>
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>

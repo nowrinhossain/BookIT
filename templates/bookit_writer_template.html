@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BOOKIT</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../static/css_read_pdf.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="logout">Logout</a></li>
+            <li><a href="rent_book">Rent Book</a></li>
+            <li><a href="buy_from_user">Buy Book</a></li>
+            <li><a href="buy_book" >Request to buy</a></li>
+            <li><a href="read_pdf" class="current">Read Pdf</a></li>
+            <li><a href="user_profile">Profile</a></li>
+            <li><a href="user_posts">Home</a></li>
+
+    	</ul>
+    </div> <!-- end of menu -->
+
+    <div id="templatemo_content">
+
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>Categories</h1>
+                <ul>
+                   <li><a href="bookit_category_template?cat=Horror">Horror</a></li>
+                    <li><a href="bookit_category_template?cat=Mystery">Mystery</a></li>
+                    <li><a href="bookit_category_template?cat=Novel">Novel</a></li>
+                    <li><a href="bookit_category_template?cat=Science Fictions">Science Fictions</a></li>
+                    <li><a href="bookit_category_template?cat=Religious">Religious</a></li>
+                    <li><a href="bookit_category_template?cat=Cooking">Cooking</a></li>
+                    <li><a href="bookit_category_template?cat=Children">Children</a></li>
+                    <li><a href="bookit_category_template?cat=Fantasy">Fantasy</a></li>
+
+
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Search by writter</h1>
+
+                <div class="topnav input">
+                  <input type="text" name="authorsearch" placeholder="Search..">
+                </div>
+
+
+                <ul>
+                    <li><a href="bookit_writer_template?writer=Humayun Ahmed">Humayun Ahmed</a></li>
+                    <li><a href="bookit_writer_template?writer=Sharat Chandra">Sharat Chandra</a></li>
+                    <li><a href="bookit_writer_template?writer=Muhammed Zafar Iqbal">Muhammed Zafar Iqbal</a></li>
+                    <li><a href="bookit_writer_template?writer=Agatha cristie ">Agatha cristie </a></li>
+                    <li><a href="bookit_writer_template?writer=Profullo chandra">Profullo chandra</a></li>
+                    <li><a href="bookit_writer_template?writer=Siddika Kabir">Siddika Kabir</a></li>
+                    <li><a href="bookit_writer_template?writer=Sheikh Saadi">Sheikh Saadi</a></li>
+
+                </ul>
+            </div>
+
+            <div class="templatemo_content_left_section">
+                	</div>
+        </div> <!-- end of content left -->
+
+          <div id="templatemo_content_right">
+            {% for each in bookList %}
+            <div class="templatemo_buy_product_box">
+                <h1>{{each[1]}}<span>(by {{each[2]}})</span></h1>
+                <img src="../static/{{each[5]}}" alt="image"/>
+                <div class="product_info">
+                    <p>{{each[3]}}</p>
+                    <div class="Buy_book"><a href="{{each[4]}}">Read</a></div>
+                </div>
+                <div class="cleaner">&nbsp;</div>
+            </div>
+
+            {% endfor %}
+        </div> <!-- end of content right -->
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+
+
+
+    <div id="templatemo_footer">
+
+	       <a href="../static/bookit_subpage.html">Home</a> | <a href="../static/bookit_subpage.html">Search</a> | <a href="../static/bookit_subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © CSEDU <a href="#"><strong>Your Company Name</strong></a>
+       <!-- end of footer -->
+
+</div> <!-- end of container -->
+</div>
+</body>

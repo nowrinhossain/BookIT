@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{{url_for('static',filename='user_profile.css')}}">
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<script>
+    var books = {{ books|tojson }}
+    window.onload=function () {
+        var temp = "";
+        var h = "180px";
+        var w = "165px";
+        for(var i=0;i<books.length;i++){
+
+            console.log(books[i][4]);
+
+            if(!books[i][5]){
+                books[i][5]= "Not Decided"
+            }
+
+            {#temp+=" <div id=\"books\" class=\"templatemo_owner_box\"> Book Name: "+books[i][1]#}
+            {#    + "<br/>Author: " +books[i][2]+"<br/>Category:"+books[i][6]+"<br/>"+books[i][3]+"<br/>Price : "+books[i][5]+"<br/><br/><img src=\"" +books[i][4]+"\" height=\""+h+"\" width=\""+w+"\">"+"<br/>"+"<br/></div><div class=\"cleaner_with_height\">&nbsp;</div>\n" +#}
+            {#    "                ";#}
+
+        }
+        {#document.getElementById("books").innerHTML=temp;#}
+    }
+</script>
+
+    <style>
+  article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+</style>
+
+<script type="text/javascript">
+
+
+        function readURL(input) {
+            if (input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+
+</script>
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="logout">Logout</a></li>
+            <li><a href="rent_book">Rent Book</a></li>
+            <li><a href="buy_from_user" >Buy Book</a></li>
+            <li><a href="buy_book" >Request to buy</a></li>
+            <li><a href="read_pdf">Read Pdf</a></li>
+            <li><a href="user_profile">Profile</a></li>
+            <li><a href="user_posts" class="current">Home</a></li>
+
+    	</ul>
+    </div> <!-- end of menu -->
+
+    <div class="cleaner_with_height">&nbsp;</div>
+
+
+    <div id="templatemo_content">
+
+        <div id="templatemo_content_left">
+{#            <div id="books">#}
+
+            {% for each in books %}
+
+            <div class="templatemo_owner_box">
+            <div class="owner_info">
+
+                 <p>{{each[8]}}</p>
+            <p>{{each[12]}}</p>
+            <p>{{each[9]}}</p>
+
+
+            <p>Book : {{each[1]}}</p>
+            <p>Author : {{each[2]}}</p>
+            <p>Category : {{ each[6] }}</p>
+            <p>{{each[3]}}</p>
+            Rent Price: {{each[5]}}<br/>
+                <br/>
+
+
+
+
+            </div >
+
+
+                <div class="book_image">
+                    <img src="{{each[4]}}"  class="img" height="180px" width="165px"/>
+
+
+                </div>
+
+
+            </div>
+            <div class="cleaner_with_height">&nbsp;</div>
+
+            {% endfor %}
+
+
+
+{#            </div>#}
+
+        </div> <!-- end of content left -->
+
+        <div id="templatemo_content_right">
+           <form action="/post_entry" method="post" enctype="multipart/form-data">
+               <select name="for_sell_rent">
+              <option value="Add book for sell">Add book for sell</option>
+              <option value="Add book for give rent">Add book to give rent</option>
+                   </select>
+               <br/>
+
+               Select Category   <select name="category">
+                    <option value="Horror">Horror</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Fictions">Fictions</option>
+                    <option value="Religious">Religious</option>
+                    <option value="Children">Children</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Novel">Programming</option>
+                   </select>
+
+                <br>
+               Bookname:
+               <br/>
+               <input type="text" name="bookname"/>
+               <br/>
+               Author:
+               <br/>
+               <input type="text" name="author"/>
+               <br/>
+               <br/>
+               Price:       <input type="number" name="book_price">tk<br>
+
+
+                        <br/>
+               <img class="img" id="blah" src="#" alt="Add book image" align="center" />
+
+                        <br/>
+
+                        <input type='file' onchange="readURL(this);" align="left" name="book_image"/>
+               <input type="submit" value="Submit"/>
+           </form>
+
+        </div> <!-- end of content right -->
+
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+	       <a href="subpage.html">Home</a> | <a href="subpage.html">Search</a> | <a href="subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © CSEDU <a href="#"><strong>Your Company Name</strong></a>
+        <!-- Credit: www.templatemo.com -->	</div>
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>

@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="UTF-8" />
+    <title>BCORE Admin Dashboard Template | Dashboard </title>
+     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+     <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <!-- GLOBAL STYLES -->
+
+
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/plugins/bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/theme.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/MoneAdmin.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/plugins/Font-Awesome/css/font-awesome.css')}}">
+    <script>
+    var books = {{ books|tojson }}
+    window.onload=function () {
+        var temp = "";
+        var h = "180px";
+        var w = "165px";
+        for(var i=0; i < books.length;i++){
+
+            console.log(books[i][4]);
+
+            temp+="Book Name: " + books[i][0] + "<br/>Author: " + books[i][1] + "<br/>"+"<br/>";
+            temp += "<button> Confirm </button>" + "<button> Cancel </button>" + "<br/>"+"<br/>";
+
+        }
+        document.getElementById("books").innerHTML=temp;
+    }
+</script>
+    <!--END GLOBAL STYLES -->
+
+    <!-- PAGE LEVEL STYLES -->
+    <link href="assets/css/layout2.css" rel="stylesheet" />
+       <link href="assets/plugins/flot/examples/examples.css" rel="stylesheet" />
+       <link rel="stylesheet" href="assets/plugins/timeline/timeline.css" />
+    <!-- END PAGE LEVEL  STYLES -->
+     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <script>
+    $("#file-picker").change(function(){
+        var input = document.getElementById('file-picker');
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+            if ((ext == 'jpg') || (ext == 'png'))
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+        }
+    } );
+</script>
+    <![endif]-->
+</head>
+
+    <!-- END HEAD -->
+
+    <!-- BEGIN BODY -->
+<body class="padTop53 " >
+
+    <!-- MAIN WRAPPER -->
+    <div id="wrap" >
+
+
+
+        <!-- HEADER SECTION -->
+        <div id="top">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
+                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
+                    <i class="icon-align-justify"></i>
+                </a>
+                <!-- LOGO SECTION -->
+                <header class="navbar-header">
+
+                    <a href="index.html" class="navbar-brand">
+                    <img src="assets/img/logo.png" alt="" />
+
+                        </a>
+                </header>
+                <!-- END LOGO SECTION -->
+                <ul class="nav navbar-top-links navbar-right">
+
+
+
+                    <!--ALERTS SECTION -->
+                    <li class="chat-panel dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="label label-info">8</span>   <i class="icon-comments"></i>&nbsp; <i class="icon-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-alerts">
+
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="icon-comment" ></i> New Comment
+                                    <span class="pull-right text-muted small"> 4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="icon-twitter info"></i> 3 New Follower
+                                    <span class="pull-right text-muted small"> 9 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="icon-envelope"></i> Message Sent
+                                    <span class="pull-right text-muted small" > 20 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="icon-tasks"></i> New Task
+                                    <span class="pull-right text-muted small"> 1 Hour ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="icon-upload"></i> Server Rebooted
+                                    <span class="pull-right text-muted small"> 2 Hour ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Alerts</strong>
+                                    <i class="icon-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <!-- END ALERTS SECTION -->
+
+                    <!--ADMIN SETTINGS SECTIONS -->
+
+
+
+
+
+                                        <!--END ADMIN SETTINGS -->
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+       <div id="left" >
+            <div class="media user-media well-small">
+                <br />
+                <div class="media-body">
+
+                    <ul class="list-unstyled user-info">
+
+
+
+                    </ul>
+                </div>
+                <br />
+            </div>
+
+            <ul id="menu" class="collapse">
+
+
+                <li class="panel active">
+                    <a href="index.html" >
+                        <i class="icon-table"></i> Dashboard
+
+
+                    </a>
+                </li>
+
+
+
+
+
+
+
+
+
+
+                    <ul class="collapse" id="blank-nav">
+
+                        <li><a href="blank.html"><i class="icon-angle-right"></i> Blank Page One  </a></li>
+                        <li><a href="blank2.html"><i class="icon-angle-right"></i> Blank Page Two  </a></li>
+                    </ul>
+                </li>
+                <li><a href="logout"><i class="icon-signin"></i> Logout </a></li>
+
+            </ul>
+
+             <div>
+
+
+                        <form action="dashboard" method="POST" enctype="multipart/form-data">
+
+                            <div>
+                                <strong>Upload PDF Book</strong>
+                            <label>
+                            <input type="text" name="book_name" placeholder="Bookname">
+                            <br/>
+                            <br/>
+                            <input type="text" name="writer_name" placeholder="Author">
+
+                                <br>
+                                <br>
+                            <input id="file-picker" type="file" name="file"  multiple>
+                                <br>
+                            <input type="submit" value="Upload!" id="upload-button">
+                            </label>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+        </div>
+
+
+
+
+        <!--END MENU SECTION -->
+
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+
+            <div class="inner" style="min-height: 700px;">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1> Admin Dashboard </h1>
+                    </div>
+                </div>
+
+                 <!--BLOCK SECTION -->
+                <div id="books"></div>
+                <!--div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center;">
+
+
+                    </div>
+
+                </div-->
+                  <!--END BLOCK SECTION -->
+                <hr />
+                   <!-- CHART & CHAT  SECTION -->
+
+                </div>
+               </div>
+
+
+        </div>
+
+
+
+
+</body>
+
+    <!-- END BODY -->
+</html>

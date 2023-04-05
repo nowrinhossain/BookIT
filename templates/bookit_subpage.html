@@ -1,0 +1,171 @@
+<!DOCTYPE html >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Subpage</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../static/css_read_pdf.css" rel="stylesheet" type="text/css" />
+
+
+		<script type="text/javascript">
+			<!--
+			    function toggle_visibility(id) {
+			       var e = document.getElementById(id);
+			       if(e.style.display == 'block')
+			          e.style.display = 'none';
+			       else
+			          e.style.display = 'block';
+			    }
+			//-->
+		</script>
+
+		<style type="text/css">
+
+			#popupBoxOnePosition{
+				top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+				background-color: rgba(0,0,0,0.7); display: none;
+			}
+			#popupBoxTwoPosition{
+				top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+				background-color: rgba(0,0,0,0.7); display: none;
+			}#popupBoxThreePosition{
+				top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+				background-color: rgba(0,0,0,0.7); display: none;
+			}
+			.popupBoxWrapper{
+				width: 550px; margin: 50px auto; text-align: left;
+			}
+			.popupBoxContent{
+				background-color: rgba(8, 111, 255, 0.48); padding: 15px;
+			}
+		</style>
+	</head>
+
+<body>
+
+
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" class="current">Search</a></li>
+            <li><a href="index.html">Books</a></li>
+            <li><a href="index.html">New Releases</a></li>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Contact</a></li>
+    	</ul>
+    </div> <!-- end of menu -->
+
+    <!--div id="templatemo_header">
+
+    <!--/div> <!-- end of header -->
+
+    <div id="templatemo_content">
+
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>Categories</h1>
+                <ul>
+
+                    <li><a href="buy_category_template?cat=Horror">Horror</a></li>
+                    <li><a href="buy_category_template?cat=Mystery">Mystery</a></li>
+                    <li><a href="buy_category_template?cat=Novel">Novel</a></li>
+                    <li><a href="bookit_category_template?cat=Science Fictions">Science Fictions</a></li>
+                    <li><a href="buy_category_template?cat=Religious">Religious</a></li>
+                    <li><a href="buy_category_template?cat=Cooking">Cooking</a></li>
+                    <li><a href="buy_category_template?cat=Children">Children</a></li>
+                    <li><a href="buy_category_template?cat=Fantasy">Fantasy</a></li>
+                </ul>
+            </div>
+
+			<div class="templatemo_content_left_section">
+            	<h1>Bestsellers</h1>
+                <ul>
+
+                    <li><a href="buy_writer_template?cat=Humayun Ahmed">Humayun Ahmed</a></li>
+                    <li><a href="buy_writer_template?cat=Sharat Chandra">Sharat Chandra</a></li>
+                    <li><a href="buy_writer_template?cat=Muhammed Zafar Iqbal">Muhammed Zafar Iqbal</a></li>
+                    <li><a href="buy_writer_template?cat=Agatha cristie ">Agatha cristie </a></li>
+                    <li><a href="buy_writer_template?cat=Profullo chandra">Profullo chandra</a></li>
+                    <li><a href="buy_writer_template?cat=Siddika Kabir">Siddika Kabir</a></li>
+                    <li><a href="buy_writer_template?cat=Sheikh Saadi">Sheikh Saadi</a></li>
+
+            	</ul>
+            </div>
+
+            <div class="templatemo_content_left_section">
+               </div>
+        </div> <!-- end of content left -->
+
+
+         <div id="templatemo_content_right">
+            {% for each in bookList %}
+            <div class="templatemo_buy_product_box">
+                <h1>{{each[1]}}<span>(by {{each[2]}})</span></h1>
+                <img src="../static/{{each[5]}}" alt="image"/>
+                <div class="product_info">
+                    <p>{{each[3]}}</p>
+                    <h3>BDT{{each[6]}}</h3>
+                    <form action="/bookit_subpage" method="post" id="nameform">
+
+                      Quantity: <input type="number" name="quantity"><br>
+                      <button type="button" id="confirm_buy"  onclick="toggle_visibility('popupBoxOnePosition');">Confirm!</button>
+
+
+
+                    <div id="popupBoxOnePosition">
+                    <div class="popupBoxWrapper">
+                        <div class="popupBoxContent">
+                        <h3>Thank you for your confirmation!!</h3>
+                         <p>Your selected books are sent as "buy request to admins"</p>
+
+
+                                <button type="submit" id="confirm_buy_button" onclick="toggle_visibility('popupBoxOnePosition');">Ok!</button>
+
+
+                        </div>
+			         </div>
+		            </div>
+
+                        </form>
+
+
+
+                     </div>
+
+
+                <div class="cleaner">&nbsp;</div>
+            </div>
+
+            {% endfor %}
+
+
+            <div id="wrapper">
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+        </div> <!-- end of content right -->
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+
+
+    <div id="templatemo_footer">
+	       <a href="index.html">Home</a> | <a href="index.html">Search</a> | <a href="index.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2024 <a href="#"><strong>Your Company Name</strong></a>
+
+	</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login/Registration Form Transition</title>
+
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+
+<link rel="stylesheet" href="{{url_for('static',filename='edit_profile.css')}}">
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
+  <style>
+  article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+  </style>
+
+
+
+    <script type="text/javascript">
+
+
+        function readURL(input) {
+            if (input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(200)
+                        .height(180);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <p class="tip">Click on button in image container</p>
+
+    <div class="cont">
+
+        <div class="mycont">
+
+            <div class="cont_edit_profile">
+
+                <h2>Change Profile Information</h2>
+                <form action="/edit_profile" method="post">
+                  <label>
+                    <input type="text" name="change_username" placeholder="Uername" />
+                  </label>
+
+
+                  <label>
+                    <input type="password" name="change_password" placeholder="Password" />
+                  </label>
+
+                  <label>
+                    <input type="password" name="change_confirm_password" placeholder="Confirm Password" />
+                  </label>
+
+
+
+                  <label>
+                    <input type="text" name= "change_location" placeholder="Location" />
+                  </label>
+
+
+
+
+
+                  <button type="submit" class="submit">Save</button>
+
+
+
+                </form>
+
+
+
+            </div>
+
+
+
+
+
+
+        <div class="content_profile_img">
+
+                <form action="/change_pro_pic" method="post" enctype="multipart/form-data">
+
+
+{#                <img class="dp_image" id="blah" src="#" alt="Add book image" height="180px" width="150px"/>#}
+                    <div class="img_container">
+                        <img class="dp_img" id="blah" src="#" alt="Add Profile Picture" align="center" />
+
+                    </div>
+
+                    <br/>
+
+
+                    <input type='file' onchange="readURL(this);" align="right" name="pro_image"/>
+
+                    <button type="submit" class="submit">Save</button>
+
+                </form>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+        </div><!--end of mycont-->
+
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

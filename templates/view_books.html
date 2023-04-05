@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{{url_for('static',filename='view_books.css')}}">
+<script src="{{url_for('static', filename='view_book.js')}}"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
+
+
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="logout">Logout</a></li>
+            <li><a href="rent_book">Rent Book</a></li>
+            <li><a href="buy_from_user" >Buy Book</a></li>
+            <li><a href="buy_book" >Request to buy</a></li>
+            <li><a href="read_pdf">Read Pdf</a></li>
+            <li><a href="user_profile" class="current">Profile</a></li>
+            <li><a href="user_posts">Home</a></li>
+        </ul>
+    </div> <!-- end of menu -->
+
+    <div class="cleaner_with_height">&nbsp;</div>
+
+
+    <div id="templatemo_content">
+
+        <div id="inner_content">
+
+          <div class="tabs">
+          <div class="tab-2">
+            <label for="tab2-1">BOOKS GIVEN FOR RENT</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+
+            <div>
+                {% for each in rent_info %}
+
+                <!--div class="cleaner_with_height">&nbsp;</div-->
+                <div class="templatemo_product_box">
+
+
+                   <img src="{{each[2]}}"  class="img" height="150px" width="130px"/>
+
+                    <div class="product_info">
+                        Book Name :{{each[0]}}<br/>
+                        Writer Name : {{each[1]}}<br/>
+                        Category :{{ each[4] }}<br/>
+                        <p>Rent Prize : {{each[3]}}</p>
+                    </div>
+
+
+                </div>
+                {% endfor %}
+            </div>
+
+
+          </div>
+
+
+          <div class="tab-2">
+            <label for="tab2-2">BOOKS GIVEN FOR SELL</label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div>
+
+            {% for each_info in sell_info %}
+
+                <!--div class="cleaner_with_height">&nbsp;</div-->
+                <div class="templatemo_product_box">
+
+
+                   <img src="{{each_info[2]}}"  class="img" height="150px" width="130px"/>
+
+                    <div class="product_info">
+                        Book Name :{{each_info[0]}}<br/>
+                        Writer Name : {{each_info[1]}}<br/>
+                        Category : {{ each_info[4] }}<br/>
+                        <p>Rent Prize : {{each_info[3]}}</p>
+                    </div>
+
+
+                </div>
+            {% endfor %}
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div> <!-- end of content -->
+
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>

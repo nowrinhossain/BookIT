@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{{url_for('static',filename='user_profile.css')}}">
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<style>
+  article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+</style>
+
+    <script type="text/javascript">
+
+
+        function readURL(input) {
+            if (input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="logout">Logout</a></li>
+            <li><a href="rent_book">Rent Book</a></li>
+            <li><a href="buy_from_user" >Buy Book</a></li>
+            <li><a href="buy_book" >Request to buy</a></li>
+            <li><a href="read_pdf">Read Pdf</a></li>
+            <li><a href="user_profile"  class="current">Profile</a></li>
+            <li><a href="user_posts">Home</a></li>
+        </ul>
+    </div> <!-- end of menu -->
+
+    <div class="cleaner_with_height">&nbsp;</div>
+
+
+    <div id="templatemo_content">
+
+        <div id="templatemo_content_left">
+
+            <form action="/user" method="get">
+
+            <div>
+
+                    <img src = "{{info[2]}}" class="dp_image"  height="150" width="180">
+
+
+                    <!--{{user_image}}-->
+
+
+            </div>
+            <div class="user_info">
+
+                     <h2>{{info[0]}}</h2>
+
+
+                <p>{{info[1]}}</p><br/>
+                <p>{{info[3]}}</p><br/>
+
+            </div>
+
+            </form>
+
+
+
+
+            <div class="Edit_profile_button">
+                <a href="edit_profile">Edit Profile</a>
+            </div>
+
+
+
+
+
+        </div> <!-- end of content left -->
+
+        <div id="templatemo_content_right">
+
+
+
+           <form action="" method="post" enctype="multipart/form-data">
+
+
+
+
+           <div class="dropdown_list">
+
+               <div class="View_button">
+                <a href="view_books">Your Books</a>
+
+               </div>
+               <br/>
+
+
+               <select name="for_sell_rent">
+                   <option value="Add book for sell">Add book for sell</option>
+                   <option value="Add book for give rent">Add book to give rent</option>
+               </select>
+
+
+
+           </div>
+                <div class="dropdown_list">
+                Select Category   <select name="category">
+                    <option value="Horror">Horror</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Fictions">Fictions</option>
+                    <option value="Religious">Religious</option>
+                    <option value="Children">Children</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Novel">Programming</option>
+                   </select>
+
+                </div>
+
+
+                <div class="book_info">
+
+                        Book name:   <input type="text" name="book_name"><br>
+                        <div class="cleaner_with_height"></div>
+                        Writer name: <input type="text" name="writer_name"><br>
+                        <br/>
+
+                        Price:       <input type="number" name="book_price">tk<br>
+                        <br/>
+
+
+                        <img class="img" id="blah" src="#" alt="Add book image" align="center" />
+
+                        <br/>
+
+                        <input type='file' onchange="readURL(this);" align="left" name="book_image"/>
+
+                        <div class="cleaner_with_height"></div>
+
+                        <input type="submit" align="middle" value="Add" >
+
+                        <div class="cleaner_with_height"></div>
+
+
+
+
+                </div>
+
+            </form>
+
+
+
+
+
+
+        </div> <!-- end of content right -->
+
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+	       <a href="subpage.html">Home</a> | <a href="subpage.html">Search</a> | <a href="subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © CSEDU <a href="#"><strong>Your Company Name</strong></a>
+        <!-- Credit: www.templatemo.com -->	</div>
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>
